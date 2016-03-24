@@ -7,6 +7,11 @@ class PinsController < ApplicationController
   end
   def create
     @pin = Pin.new(pin_params)
+
+    if @pin.save
+      redirect_to @pin, notice: "Succesfully saved"
+
+    end
   end
 
 private
